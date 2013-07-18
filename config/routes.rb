@@ -1,4 +1,7 @@
 Biblio::Application.routes.draw do
+  resources :books
+
+
   devise_for :users
 
   resources :pages

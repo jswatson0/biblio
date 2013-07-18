@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  author: MyString
+  published: 2013-07-18
+  catagory: MyString
+  description: MyText
+  rating: 1
+  isbn: MyString
+  cover: MyString
+
+two:
+  title: MyString
+  author: MyString
+  published: 2013-07-18
+  catagory: MyString
+  description: MyText
+  rating: 1
+  isbn: MyString
+  cover: MyString

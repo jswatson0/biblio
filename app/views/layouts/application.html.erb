@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Biblio</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>BiblioPhile</title>
+  
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+	<% if flash[:notice] %>
+		<div class="alert"><%= notice %></div>
+	<% end%>
+	<% if flash[:alert] %>
+		<div class="alert alert-error"><%= alert %></div>
+	<%end%>
+	<div id="container">
+		<div class="navbar">
+	    <div class="navbar-inner">
+	      <a class="brand" href="/">BiblioPhile</a>
+	      <ul class="nav pull-right">
+	        <% if current_user.present? %>
+	        <%# user is logged in, show log out link, user tasks, create new task %>
+	          <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+	          <li><%= link_to 'My Books', books_path %></li> 
+	          <li><%= link_to 'Add Book', new_book_path %></li>
+	        <%# user is not logged in, show signup and login links %>
+	        <% else %>
+	          <li><%= link_to 'Sign In', new_user_session_path %></li> 
+	          <li><%= link_to 'Register Now!', new_user_registration_path %></li>
+	        <% end %>
+	      </ul>
+	    </div>
+	  </div>
+  </div>
+<div class="container">
 <%= yield %>
+</div>
 
 </body>
 </html>
