@@ -1,7 +1,15 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-box-sizing: border-box;
+}
+div {
+	margin: 0px;
+	padding: 20px;
+}
 .container{
 	text-align:center;
 }
@@ -15,8 +23,10 @@
 }
 
 .banner{
-
+	width: 800px;
+	background: #fdff73;
 	text-align:center;
+	margin: 0px auto;
 }
 
 a.register {
@@ -27,6 +37,7 @@ a.register {
   }
   
 }
+
 
 
 
