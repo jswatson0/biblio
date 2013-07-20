@@ -1,6 +1,41 @@
 <div class="banner">
 	<h3>Welcome to the BibloPhile App!</h3>
-	<p>A great way to store your favorite reads.</p>
+	<p>A great way to store and share your favorite reads.</p>
 	<a class="btn btn-primary register" href="/users/sign_up">Register</a>
 </div>
+
+</br >
+<h3>Master List</h3>
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Published</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Rating</th>
+    <th>Isbn</th>
+    <th>Cover</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.author %></td>
+    <td><%= book.published %></td>
+    <td><%= book.catagory %></td>
+    <td><%= book.description %></td>
+    <td><%= book.rating %></td>
+    <td><%= book.isbn %></td>
+    <td><%= image_tag(book.cover_url, width: 50) if book.cover.present? %></td>
+    <td><%= link_to 'Show', book %></td>
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
 
