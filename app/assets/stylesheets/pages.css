@@ -8,25 +8,37 @@
 }
 div {
 	margin: 0px;
-	padding: 20px;
 }
 .container{
 	text-align:center;
 }
+.navbar{
+	position:fixed;
+	width: 100%;
+}
 
 .navbar-inner{
-	padding: 0px 100px;
+	
 }
 
 .nav.pull-right{
 	margin: 0 auto;
 }
-
+.btn {
+	margin: 10px;
+}
 .banner{
 	width: 800px;
 	background: #fdff73;
 	text-align:center;
 	margin: 0px auto;
+	margin-top: 75px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 4px;
+
+}
+.mylist {
+	margin-top: 75px;
 }
 
 a.register {
